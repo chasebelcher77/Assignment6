@@ -1,0 +1,33 @@
+﻿@page
+@using Assignment_3.Model
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Movie Listings</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var movie in Model.Movies)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <img src="@movie.Image" class="card-img-top" alt="@movie.Title" style="height: 300px; object-fit: cover;" />
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between fw-bold mb-2">
+                            <span>@movie.Title</span>
+                            <span>$@movie.Price</span>
+                        </div>
+                        <p class="card-text mb-1"><strong>Release:</strong> @movie.ReleaseDate.ToShortDateString()</p>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>@movie.Genre</span>
+                            <span>@movie.Rating/10</span>
+                        </div>
+                        <a asp-page="details" asp-route-id="@movie.Id">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
