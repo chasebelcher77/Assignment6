@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listify</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Listify</h1>
+            <p>by Chase Belcher</p>
+        </header>
+
+        <section class="input-section">
+            <label for="sentenceInput"><strong>Enter a Sentence</strong></label><br>
+            <input type="text" id="sentenceInput" placeholder="Type your sentence here...">
+            <button onclick="processSentence()">Process</button>
+        </section>
+
+        <section class="list-section">
+            <div class="list-box number-box">
+                <h3>Number Words:</h3>
+                <ul id="numberList"></ul>
+            </div>
+            <div class="list-box non-number-box">
+                <h3>Non-Number Words:</h3>
+                <ul id="nonNumberList"></ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
